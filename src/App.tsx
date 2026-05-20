@@ -1,18 +1,37 @@
-/**
- * v1 sections (see Projects/personal-website/brief.md in Build AI Product Sense):
- * About · Problems I solve · Publications · What I'm building · Inspires · Free value
- */
+import { Hero } from "./sections/Hero";
+import { StampNav } from "./sections/StampNav";
+import { About } from "./sections/About";
+import { Problems } from "./sections/Problems";
+import { Building } from "./sections/Building";
+import { Publications } from "./sections/Publications";
+import { FreeValue } from "./sections/FreeValue";
+import { Inspires } from "./sections/Inspires";
+import { Footer } from "./sections/Footer";
+import { useScrollReveal } from "./hooks/useScrollReveal";
+
 export default function App() {
+  useScrollReveal();
+
   return (
-    <main className="page">
-      <header className="hero">
-        <p className="eyebrow">Product leader · Fintech · AI</p>
-        <h1>Thiago Bello</h1>
-        <p className="lede">
-          Site scaffold — sections and copy live in the planning repo. Run{" "}
-          <code>npm install && npm run dev</code> to preview.
-        </p>
-      </header>
+    <>
+    <main>
+      <Hero />
+
+      <StampNav />
+
+      <About />
+
+      <Problems />
+
+      <Building />
+
+      <Publications />
+
+      <FreeValue />
+
+      <Inspires />
     </main>
+    <Footer />
+    </>
   );
 }

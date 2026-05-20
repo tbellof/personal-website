@@ -1,0 +1,93 @@
+:root {
+  --bg: #0e0d0b;
+  --surface: #15130f;
+  --surface-2: #1b1815;
+  --fg: #f2eadd;
+  --fg-muted: #8b847a;
+  --fg-faint: #5a5247;
+  --border: #2a2620;
+  --hairline: #3a3530;
+  --primary: #c7472a;
+  --primary-2: #d15536;
+  --primary-fg: #fff8ee;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+body.light {
+  --bg: #fdfaf7;
+  --surface: #f5f0ea;
+  --surface-2: #ede8e0;
+  --fg: #1a1714;
+  --fg-muted: #6b6560;
+  --fg-faint: #a09a94;
+  --border: #ddd8d0;
+  --hairline: #e8e2d8;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: "Inter Tight", -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+section {
+  padding: 96px 0;
+  border-top: 0.5px solid var(--hairline);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 900ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 100ms;
+}
+
+.reveal-delay-2 {
+  transition-delay: 200ms;
+}
+
+.reveal-delay-3 {
+  transition-delay: 300ms;
+}
+
+.reveal-delay-4 {
+  transition-delay: 400ms;
+}
+
+.reveal-delay-5 {
+  transition-delay: 500ms;
+}

@@ -1,0 +1,154 @@
+#building h2.section-title {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  margin: 0 0 48px;
+}
+
+.building-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.building-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  padding: 28px;
+  transition:
+    background-color 200ms var(--ease),
+    transform 200ms var(--ease);
+}
+
+.building-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity 200ms var(--ease);
+}
+
+.building-card:hover {
+  background: var(--surface-2);
+  transform: translateY(-3px);
+}
+
+.building-card:hover::before {
+  opacity: 1;
+}
+
+.building-card.live::before {
+  background: #22c55e;
+}
+
+.building-card.ongoing::before {
+  background: #f59e0b;
+}
+
+.building-card.evolving::before {
+  background: #3b82f6;
+}
+
+.building-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.building-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  border: 0.5px solid var(--border);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.building-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.building-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.building-status.live {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+
+.building-status.live::before {
+  background: #22c55e;
+}
+
+.building-status.ongoing {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+}
+
+.building-status.ongoing::before {
+  background: #f59e0b;
+}
+
+.building-status.evolving {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+}
+
+.building-status.evolving::before {
+  background: #3b82f6;
+}
+
+.building-card h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 0 10px;
+  color: var(--fg);
+}
+
+.building-card p {
+  font-size: 14px;
+  color: var(--fg-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .building-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .building-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,80 @@
+footer {
+  padding: 64px 0;
+  border-top: 0.5px solid var(--hairline);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-name {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+
+.footer-left p {
+  font-size: 14px;
+  color: var(--fg-faint);
+  margin: 8px 0 0;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  color: var(--fg-faint);
+  text-decoration: none;
+  font-size: 16px;
+  transition:
+    color 200ms var(--ease),
+    border-color 200ms var(--ease),
+    background-color 200ms var(--ease);
+}
+
+.footer-link:hover {
+  color: var(--fg);
+  border-color: var(--fg-faint);
+  background: var(--surface);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  color: var(--fg-faint);
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 11px;
+  padding: 8px 14px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition:
+    color 200ms var(--ease),
+    border-color 200ms var(--ease);
+}
+
+.theme-toggle:hover {
+  color: var(--fg-muted);
+  border-color: var(--fg-faint);
+}
+
+@media (max-width: 540px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

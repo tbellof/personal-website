@@ -1,0 +1,67 @@
+#about h2.section-title {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  margin: 0 0 48px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-prose p {
+  font-size: 17px;
+  color: var(--fg-muted);
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.about-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.about-prose strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 20px 0;
+  border-bottom: 0.5px solid var(--hairline);
+}
+
+.stat-row:first-child {
+  border-top: 0.5px solid var(--hairline);
+}
+
+.stat-label {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--fg-faint);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 15px;
+  color: var(--fg);
+  font-weight: 500;
+  text-align: right;
+  max-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

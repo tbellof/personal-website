@@ -1,0 +1,54 @@
+{
+  "defaultTheme": "dark",
+  "stampNav": {
+    "enabled": true,
+    "items": [
+      {
+        "sectionId": "about",
+        "label": "About",
+        "illustrationSrc": "/images/stamps/about.svg",
+        "backgroundColor": "#1b1815"
+      },
+      {
+        "sectionId": "problems",
+        "label": "Problems",
+        "illustrationSrc": "/images/stamps/problems.svg",
+        "backgroundColor": "#201d18"
+      },
+      {
+        "sectionId": "building",
+        "label": "Building",
+        "illustrationSrc": "/images/stamps/building.svg",
+        "backgroundColor": "#242019"
+      },
+      {
+        "sectionId": "publications",
+        "label": "Writing",
+        "illustrationSrc": "/images/stamps/publications.svg",
+        "backgroundColor": "#28241f"
+      },
+      {
+        "sectionId": "freeValue",
+        "label": "Commands",
+        "illustrationSrc": "/images/stamps/commands.svg",
+        "backgroundColor": "#2c2722"
+      },
+      {
+        "sectionId": "inspires",
+        "label": "Inspires",
+        "illustrationSrc": "/images/stamps/inspires.svg",
+        "backgroundColor": "#302c26"
+      }
+    ]
+  },
+  "sections": [
+    { "id": "hero", "enabled": true, "navLabel": null },
+    { "id": "about", "enabled": true, "navLabel": "About" },
+    { "id": "problems", "enabled": true, "navLabel": "Problems" },
+    { "id": "building", "enabled": true, "navLabel": "Building" },
+    { "id": "publications", "enabled": true, "navLabel": "Writing" },
+    { "id": "freeValue", "enabled": true, "navLabel": "Commands" },
+    { "id": "inspires", "enabled": true, "navLabel": "Inspires" },
+    { "id": "footer", "enabled": true, "navLabel": null }
+  ]
+}
