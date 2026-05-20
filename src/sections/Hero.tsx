@@ -4,10 +4,10 @@ import "../styles/hero.css";
 const LINKEDIN_URL = "https://www.linkedin.com/in/thiagobellof";
 
 const workedLogos = [
-  { label: "Inter", initials: "In", color: "#ff7a00" },
-  { label: "Will Bank", initials: "WB", color: "#ffe600" },
-  { label: "Wiz", initials: "Wz", color: "#7c3aed" },
-  { label: "Ambev", initials: "Ab", color: "#003c7e" },
+  { label: "Inter", src: "/logos/inter.jpg" },
+  { label: "Will Bank", src: "/logos/will.png" },
+  { label: "Wiz", src: "/logos/wiz.png" },
+  { label: "Ambev", src: "/logos/ambev.png" },
 ] as const;
 
 const studiedLogos = [
@@ -17,29 +17,35 @@ const studiedLogos = [
   { label: "Maven", initials: "Mv", color: "#e8442a" },
 ] as const;
 
-function TrajLogo({
-  label,
-  initials,
-  color,
-}: {
-  label: string;
-  initials: string;
-  color: string;
-}) {
+type TrajLogoProps =
+  | { label: string; src: string }
+  | { label: string; initials: string; color: string };
+
+function TrajLogo(props: TrajLogoProps) {
+  const { label } = props;
+
   return (
     <span className="traj-logo">
-      <svg
-        className="traj-logo-icon"
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        aria-hidden="true"
-      >
-        <rect width="16" height="16" rx="4" fill={color} />
-        <text x="8" y="11" textAnchor="middle">
-          {initials}
-        </text>
-      </svg>
+      {"src" in props ? (
+        <img
+          src={props.src}
+          alt={label}
+          style={{ width: 18, height: 18, objectFit: "contain", borderRadius: 4 }}
+        />
+      ) : (
+        <svg
+          className="traj-logo-icon"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          aria-hidden="true"
+        >
+          <rect width="16" height="16" rx="4" fill={props.color} />
+          <text x="8" y="11" textAnchor="middle">
+            {props.initials}
+          </text>
+        </svg>
+      )}
       {label}
     </span>
   );
@@ -50,7 +56,7 @@ function TrajRow({
   logos,
 }: {
   label: string;
-  logos: readonly { label: string; initials: string; color: string }[];
+  logos: readonly TrajLogoProps[];
 }) {
   return (
     <div className="traj-row">
