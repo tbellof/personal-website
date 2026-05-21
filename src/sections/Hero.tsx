@@ -4,48 +4,29 @@ import "../styles/hero.css";
 const LINKEDIN_URL = "https://www.linkedin.com/in/thiagobellof";
 
 const workedLogos = [
-  { label: "Inter", src: "/logos/inter.jpg" },
+  { label: "Inter", src: "/logos/inter.png" },
   { label: "Will Bank", src: "/logos/will.png" },
   { label: "Wiz", src: "/logos/wiz.png" },
-  { label: "Ambev", src: "/logos/ambev.png" },
+  { label: "Ambev", src: "/logos/ambev.jpeg" },
 ] as const;
 
 const studiedLogos = [
-  { label: "UEMA", initials: "UE", color: "#006633" },
-  { label: "FDC MBA", initials: "FD", color: "#1e3a5f" },
-  { label: "Reforge", initials: "Re", color: "#111111" },
-  { label: "Maven", initials: "Mv", color: "#e8442a" },
+  { label: "UEMA", src: "/logos/uema.png" },
+  { label: "FDC MBA", src: "/logos/fdc.webp" },
+  { label: "Reforge", src: "/logos/reforge.jpg" },
+  { label: "Maven", src: "/logos/maven.png" },
 ] as const;
 
-type TrajLogoProps =
-  | { label: string; src: string }
-  | { label: string; initials: string; color: string };
+type TrajLogo = { label: string; src: string };
 
-function TrajLogo(props: TrajLogoProps) {
-  const { label } = props;
-
+function TrajLogo({ label, src }: TrajLogo) {
   return (
     <span className="traj-logo">
-      {"src" in props ? (
-        <img
-          src={props.src}
-          alt={label}
-          style={{ width: 18, height: 18, objectFit: "contain", borderRadius: 4 }}
-        />
-      ) : (
-        <svg
-          className="traj-logo-icon"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          aria-hidden="true"
-        >
-          <rect width="16" height="16" rx="4" fill={props.color} />
-          <text x="8" y="11" textAnchor="middle">
-            {props.initials}
-          </text>
-        </svg>
-      )}
+      <img
+        src={src}
+        alt={label}
+        style={{ width: 18, height: 18, objectFit: "contain", borderRadius: 4 }}
+      />
       {label}
     </span>
   );
@@ -56,7 +37,7 @@ function TrajRow({
   logos,
 }: {
   label: string;
-  logos: readonly TrajLogoProps[];
+  logos: readonly TrajLogo[];
 }) {
   return (
     <div className="traj-row">
@@ -90,7 +71,7 @@ export function Hero() {
 
           <aside className="hero-aside">
             <div className="hero-photo" aria-label={hero.avatarAlt}>
-              <img src={hero.avatarSrc} alt="" />
+              <img src={hero.avatarSrc} alt={hero.avatarAlt} />
             </div>
             <div className="hero-contact">
               <a

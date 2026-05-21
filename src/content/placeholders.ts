@@ -3,7 +3,7 @@ export const hero = {
   accentWord: "Bello",
   roleLine: "Product leader · Fintech · AI",
   lede: "I help product teams turn complex financial products into clear bets — and I build in public while doing it.",
-  avatarSrc: "/images/avatar.svg",
+  avatarSrc: "/fotos/hero.jpeg",
   avatarAlt: "Thiago Bello",
 };
 

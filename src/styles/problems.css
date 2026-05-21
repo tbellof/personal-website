@@ -10,12 +10,17 @@
 
 .problems-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--hairline);
   border: 0.5px solid var(--hairline);
   border-radius: 8px;
   overflow: hidden;
+}
+
+/* Row 3: single card, left-aligned (3 + 3 + 1) */
+.problem-card:nth-child(7) {
+  grid-column: 1;
 }
 
 .problem-card {
@@ -97,10 +102,18 @@
   .problems-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .problem-card:nth-child(7) {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 540px) {
   .problems-grid {
     grid-template-columns: 1fr;
+  }
+
+  .problem-card:nth-child(7) {
+    grid-column: auto;
   }
 }

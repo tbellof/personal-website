@@ -1,11 +1,12 @@
 import "../styles/about.css";
 
 const stats = [
-  { label: "Currently", value: "Head of Product @ TBD" },
-  { label: "Focus", value: "AI-native products" },
+  { label: "Currently", value: "Head of Products" },
+  { label: "Focus", value: "Fintech, AI, embedded finance" },
   { label: "Writing", value: "The Lighthouse Project" },
-  { label: "Location", value: "Belo Horizonte, Brazil" },
-  { label: "Interests", value: "Product strategy, AI, design" },
+  { label: "From", value: "São Luís, Maranhão, Brazil" },
+  { label: "Based in", value: "Belo Horizonte, MG, Brazil" },
+  { label: "Interests", value: "Product strategy, design, AI" },
 ] as const;
 
 export function About() {
